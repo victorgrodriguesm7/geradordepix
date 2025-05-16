@@ -17,6 +17,9 @@
   },
   "dependencies": {
     "express": "^5.1.0",
+    "qrcode": "^1.5.4",
+    "steplix-emv-qrcps": "^0.0.8",
+    "string-strip-html": "^13.4.12",
     "zod": "^3.24.4"
   }
 }
