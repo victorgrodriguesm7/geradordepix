@@ -14,16 +14,16 @@ export const PixQrCodeSchema = z.object({
     name: z.string({
         description: "Nome que será exibido ao escanear QR Code",
         required_error: "Nome é obrigatório!"
-    }).max(25, "Nome até 24 Caracteres!"),
+    }).max(25, "Nome até 25 Caracteres!"),
     reference: z.string({
         description: "(Opcional) Identificador da Transação!",
-    }).max(25, "Identificador deve ter até 24 Caracteres!").nullish(),
+    }).max(20, "Identificador deve ter até 20 Caracteres!").nullish(),
     keyType: z.nativeEnum(KeyType, {
         errorMap: (_, ctx) => ({ message: `O KeyType '${ctx.data}' é inválido. Deve ser um dos seguintes valores: ${Object.values(KeyType).join(", ")}`}),
     }),
     city: z.string({
         description: "(Opcional) Cidade do beneficiário - Padrão: Brasil",
-    }).max(25, "Cidade deve ter até 15 Caracteres").nullish().default("Brasil"),
+    }).max(15, "Cidade deve ter até 15 Caracteres").nullish().default("Brasil"),
 });
 
 export type PixQrCode = z.infer<typeof PixQrCodeSchema>
