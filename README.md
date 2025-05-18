@@ -1,6 +1,6 @@
-# 📦 PixAPI
+# 📦 Gerador de Pix
 
-**PixAPI** é uma API simples e eficiente que gera QR Codes de pagamento via **PIX** a partir de uma chave e dados opcionais como valor, nome do recebedor e identificador da transação. Ideal para integrações rápidas ou geração de QR Codes dinâmicos.
+**Gerador de Pix** é uma API simples e eficiente que gera QR Codes de pagamento via **PIX** a partir de uma chave e dados opcionais como valor, nome do recebedor e identificador da transação. Ideal para integrações rápidas ou geração de QR Codes dinâmicos.
 
 ---
 
@@ -47,8 +47,8 @@ A resposta será um **JSON** com:
 ```bash
 git clone https://github.com/seu-usuario/pixapi.git
 cd pixapi
-yarn install
-yarn dev
+pnpm install
+pnpm dev
 ```
 
 ## 🧪 Exemplo de requisição
