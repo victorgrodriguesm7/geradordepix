@@ -17,7 +17,7 @@ export const createPixQrCode = async (props: PixQrCode) => {
 
 export const handleGenerateQrCode = async (req: Request, res: Response) => {
     try {
-        const result = PixQrCodeSchema.safeParse({ ...req.params, ...req.body});
+        const result = PixQrCodeSchema.safeParse({ ...req.params, ...req.body, ...req.query});
 
         if (!result.success)
             return res.status(400).json({ error: result.error.errors }).send()
