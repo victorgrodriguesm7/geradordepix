@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts"
+    "dev": "tsx watch src/server.ts",
+    "build": "esbuild src/lambda.ts --bundle --platform=node --target=node22 --outfile=dist/lambda.js"
   },
   "keywords": [],
   "author": "",
@@ -13,9 +14,13 @@
   "devDependencies": {
     "@types/express": "^5.0.1",
     "@types/node": "^22.15.18",
+    "serverless-esbuild": "^1.55.0",
+    "serverless-offline": "^14.4.0",
     "tsx": "^4.19.4"
   },
   "dependencies": {
+    "@vendia/serverless-express": "^4.12.6",
+    "esbuild": "^0.25.4",
     "express": "^5.1.0",
     "qrcode": "^1.5.4",
     "steplix-emv-qrcps": "^0.0.8",

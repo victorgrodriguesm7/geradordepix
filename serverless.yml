@@ -1,0 +1,29 @@
+service: express-api
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+  region: us-east-1
+
+functions:
+  app:
+    handler: src/lambda.handler
+    events:
+      - httpApi: '*'
+
+package:
+  exclude:
+    - node_modules/**
+    - .gitignore
+    - README.md
+
+plugins:
+  - serverless-offline
+
+custom:
+  esbuild:
+    bundle: true
+    minify: false
+    target: node22
+    platform: node
+    sourcemap: true
