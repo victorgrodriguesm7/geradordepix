@@ -10,6 +10,7 @@ functions:
     handler: src/lambda.handler
     events:
       - httpApi: '*'
+      - cors: true
 
 package:
   exclude:
