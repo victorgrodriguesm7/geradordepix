@@ -1,6 +1,6 @@
-# 📦 Gerador de Pix
+# 📦 PixApi
 
-**Gerador de Pix** é uma API simples e eficiente que gera QR Codes de pagamento via **PIX** a partir de uma chave e dados opcionais como valor, nome do recebedor e identificador da transação. Ideal para integrações rápidas ou geração de QR Codes dinâmicos.
+O **PixApi** é uma API simples e eficiente que gera QR Codes de pagamento via **PIX** a partir de uma chave e dados opcionais como valor, nome do recebedor e identificador da transação. Ideal para integrações rápidas ou geração de QR Codes dinâmicos.
 
 ---
 
@@ -38,7 +38,7 @@ A resposta será um **JSON** com:
   "name": "Fulano da Silva",
   "reference": "Pedido123",
   "keyType": "cpf",
-  "city": "São Paulo"
+  "location": "São Paulo"
 }
 ```
 
@@ -54,7 +54,7 @@ pnpm dev
 ## 🧪 Exemplo de requisição
 
 ```
-GET /00000000000?amount=25.50&name=Fulano%20da%20Silva&reference=Pedido123&keyType=cpf&city=São%20Paulo
+GET /00000000000?amount=25.50&name=Fulano%20da%20Silva&reference=Pedido123&keyType=cpf&location=São%20Paulo
 ```
 
 | Parâmetro | Tipo   | Obrigatório | Descrição                                                        |
@@ -64,7 +64,7 @@ GET /00000000000?amount=25.50&name=Fulano%20da%20Silva&reference=Pedido123&keyTy
 | name      | string | ✅           | Nome que será exibido ao escanear o QR Code (máx. 25 caracteres) |
 | reference | string | ❌           | Identificador da transação (máx. 25 caracteres)                  |
 | keyType   | enum   | ✅           | Tipo da chave: cpf, cnpj, email, telefone, outro                   |
-| city      | string | ❌           | Cidade do beneficiário (máx. 25 caracteres) - padrão: "Brasil"   |
+| location      | string | ❌           | Cidade do beneficiário (máx. 25 caracteres) - padrão: "Brasil"   |
 
 ### 📌 Tipos válidos para keyType
 - `cpf`

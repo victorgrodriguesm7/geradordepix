@@ -11,15 +11,15 @@ export default class BrCode {
     name: PixQrCode["name"];
     reference: PixQrCode["reference"];
     keyType: PixQrCode["keyType"];
-    city: PixQrCode["city"];
+    location: PixQrCode["location"];
 
-    constructor({ key, amount, name, reference, keyType, city}: PixQrCode) {
+    constructor({ key, amount, name, reference, keyType, location}: PixQrCode) {
         this.key = this.normalize(key);
         this.amount = amount;
         this.name = this.normalize(name);
         this.reference = this.normalize(reference);
         this.keyType = keyType;
-        this.city = this.normalize(city);
+        this.location = this.normalize(location);
     }
 
     formatText(text: string | null) {
@@ -40,8 +40,8 @@ export default class BrCode {
         return this.formatText(this.name);
     }
 
-    formatedCity() {
-        return this.formatText(this.city);
+    formatedLocation() {
+        return this.formatText(this.location);
     }
 
     formatedAmount() {
@@ -90,8 +90,8 @@ export default class BrCode {
             emvqr.setMerchantName(this.formatedName());
         }
 
-        if (this.city) {
-            emvqr.setMerchantCity(this.formatedCity());
+        if (this.location) {
+            emvqr.setMerchantCity(this.formatedLocation());
         }
 
         if (this.amount && this.amount != null) {

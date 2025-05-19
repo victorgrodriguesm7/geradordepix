@@ -21,7 +21,7 @@ export const PixQrCodeSchema = z.object({
     keyType: z.nativeEnum(KeyType, {
         errorMap: (_, ctx) => ({ message: `O KeyType '${ctx.data}' é inválido. Deve ser um dos seguintes valores: ${Object.values(KeyType).join(", ")}`}),
     }),
-    city: z.string({
+    location: z.string({
         description: "(Opcional) Cidade do beneficiário - Padrão: Brasil",
     }).max(15, "Cidade deve ter até 15 Caracteres").nullish().default("Brasil"),
 });
