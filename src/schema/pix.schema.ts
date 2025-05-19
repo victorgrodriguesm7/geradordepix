@@ -14,7 +14,7 @@ export const PixQrCodeSchema = z.object({
     name: z.string({
         description: "Nome que será exibido ao escanear QR Code",
         required_error: "Nome é obrigatório!"
-    }).max(25, "Nome até 25 Caracteres!"),
+    }).transform((arg, _) => arg.slice(0,25).trim()),
     reference: z.string({
         description: "(Opcional) Identificador da Transação!",
     }).max(20, "Identificador deve ter até 20 Caracteres!").nullish(),
